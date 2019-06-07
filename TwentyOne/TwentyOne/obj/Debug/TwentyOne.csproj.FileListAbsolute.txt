@@ -1,0 +1,17 @@
+C:\Users\hybou\OneDrive\Documents\GitHub\FirstProgram\FirstProgram\obj\Debug\TwentyOne.csproj.CoreCompileInputs.cache
+C:\Users\hybou\OneDrive\Documents\GitHub\FirstProgram\FirstProgram\bin\Debug\FirstProgram.exe.config
+C:\Users\hybou\OneDrive\Documents\GitHub\FirstProgram\FirstProgram\bin\Debug\FirstProgram.exe
+C:\Users\hybou\OneDrive\Documents\GitHub\FirstProgram\FirstProgram\bin\Debug\FirstProgram.pdb
+C:\Users\hybou\OneDrive\Documents\GitHub\FirstProgram\FirstProgram\obj\Debug\FirstProgram.exe
+C:\Users\hybou\OneDrive\Documents\GitHub\FirstProgram\FirstProgram\obj\Debug\FirstProgram.pdb
+C:\Users\hybou\OneDrive\Documents\GitHub\FirstProgram\FirstProgram\obj\Debug\TwentyOne.csprojAssemblyReference.cache
+C:\Users\hybou\OneDrive\Documents\GitHub\TwentyOne\FirstProgram\bin\Debug\FirstProgram.exe.config
+C:\Users\hybou\OneDrive\Documents\GitHub\TwentyOne\FirstProgram\bin\Debug\FirstProgram.exe
+C:\Users\hybou\OneDrive\Documents\GitHub\TwentyOne\FirstProgram\bin\Debug\FirstProgram.pdb
+C:\Users\hybou\OneDrive\Documents\GitHub\TwentyOne\FirstProgram\obj\Debug\TwentyOne.csprojAssemblyReference.cache
+C:\Users\hybou\OneDrive\Documents\GitHub\TwentyOne\FirstProgram\obj\Debug\TwentyOne.csproj.CoreCompileInputs.cache
+C:\Users\hybou\OneDrive\Documents\GitHub\TwentyOne\FirstProgram\obj\Debug\FirstProgram.exe
+C:\Users\hybou\OneDrive\Documents\GitHub\TwentyOne\FirstProgram\obj\Debug\FirstProgram.pdb
+C:\Users\hybou\OneDrive\Documents\GitHub\TwentyOne\FirstProgram\bin\Debug\Casino.dll
+C:\Users\hybou\OneDrive\Documents\GitHub\TwentyOne\FirstProgram\bin\Debug\Casino.pdb
+C:\Users\hybou\OneDrive\Documents\GitHub\TwentyOne\FirstProgram\obj\Debug\TwentyOne.csproj.CopyComplete
