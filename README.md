@@ -7,10 +7,37 @@ Below are descriptions of the stories I worked on, along with code-snippets and 
 
 
 ## Back End Stories
+* [Re-factor Schedule Index Logic](#re-factor-schedule-index-logic)
 
+### Re-factor Schedule Index Logic
 
-
-
+I was tasked with refactoring the way schedule items were shown in the schedule view. Instead of filtering by job and showing all schedules associated with that job, we wanted to create
+a dictionary of a key/value pair of Job and List of Schedules associated with that job. This logic gate was complicated, but works well for multiple schedule views:
+        
+    protected Dictionary<Job, List<Schedule>> ViewSchedule(List<Schedule> schedules)
+        {
+            Job job = new Job();
+            List<Job> jobs = new List<Job>();
+            List<Schedule> dictSchedule = new List<Schedule>();
+            var resultDictionary = new Dictionary<Job, List<Schedule>>();
+            foreach (Schedule schedule in schedules)
+            {
+                if (job != schedule.Job && !jobs.Contains(schedule.Job))
+                {
+                    job = schedule.Job;
+                    jobs.Add(job);
+                    foreach (Schedule x in schedules)
+                    {
+                        if (x.Job == job)
+                        {
+                            dictSchedule.Add(x);
+                        }
+                    }
+                    resultDictionary.Add(job, dictSchedule);
+                }
+            }
+            return resultDictionary;
+        }
 
 *Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
 
@@ -169,10 +196,108 @@ Finally, I needed to add the Suspended User Partial to the Account Controller:
 
 
 
-### Button Sizing Bug
+### Password Requirement Tweak
 
+I was tasked with fixing the password requirement box for the user-registration view. Previously, it would not validate the information in the password form and was placed very far away from the password box. 
+This required both HTML and CSS changes.
+HTML:
 
+	<div class="form-group row">
+		@Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+		<div class="col-md-6 col-lg-6">
+			@Html.PasswordFor(m => m.Password, new { @class = "form-control", @id = "passwordInput" })
+		</div>
+		<div class=" col-md-2 col-lg-2">
+			<div id="pswd_info">
+				<ul>
+					<lh>Password must meet the following requirements:</lh>
 
+					<li id="letter" class="invalid">At least <strong>one letter</strong></li>
+					<li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+					<li id="number" class="invalid">At least <strong>one number</strong></li>
+					<li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+					<li id="specialCharacter" class="invalid">Have at least 1 <strong>special character</strong></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control"})
+        </div>
+    </div>
+
+CSS:
+
+    @media (min-width: 1215px) {
+        .container {
+            width: 1230px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            width: inherit;
+        }
+    }
+
+    ul, li {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: start;
+        font-size: small;
+    }
+
+    #pswd_info {
+	position: absolute;
+	bottom: -125px;
+	bottom: -115px\9;
+	right: 135px;
+	width: 250px;
+	padding: 15px;
+	background: #fefefe;
+	font-size: .875em;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px #ccc;
+	border: 1px solid #ddd;
+	display: inline-block;
+	z-index: 1;
+    }
+
+    #pswd_info h4 {
+        margin: 0 0 10px 0;
+        padding: 0;
+        font-weight: normal;
+    }
+
+    #pswd_info::before {
+        content: "\25C0";
+        position: absolute;
+        top: 45%;
+        left: -12px;
+        font-size: 14px;
+        line-height: 14px;
+        color: #ddd;
+        text-shadow: none;
+        display: block;
+    }
+
+    .invalid {
+        padding-left: 22px;
+        line-height: 24px;
+        color: #ec3f41;
+    }
+
+    .valid {
+        padding-left: 22px;
+        line-height: 24px;
+        color: #3a7d34;
+    }
 
 *Jump to: [Front End Stories](#front-end-stories), [Back End Stories](#back-end-stories), [Other Skills](#other-skills-learned), [Page Top](#live-project)*
 
