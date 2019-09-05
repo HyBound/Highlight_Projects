@@ -1,0 +1,15 @@
+===Database hybound
+
+== Table structure for table user
+
+|------
+|Column|Type|Null|Default
+|------
+|//**id**//|int(11)|No|
+|**username**|varchar(255)|No|
+|email|varchar(255)|No|
+|password|varchar(255)|No|
+|active|tinyint(1)|No|
+== Dumping data for table user
+
+|1|tyler|tyler@tyler.com|tyler|1
